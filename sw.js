@@ -1,10 +1,10 @@
 var cacheName = 'latestNews-v1';
 
 // Cache our known resources during install
-self.addEventListener('install', event => {
+self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheName)
-    .then(cache => cache.addAll([
+    .then(function(cache){ cache.addAll([
       './js/main.js',
       './js/article.js',
       './images/newspaper.svg',
@@ -13,7 +13,7 @@ self.addEventListener('install', event => {
       './data/data-1.json',
       './article.html',
       './index.html'
-    ]))
+    ]);})
   );
 });
 
